@@ -1,0 +1,181 @@
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+
+/* a:hover {
+    text-decoration: none;
+    color: black;
+} */
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.user_img {
+    width: 80%;
+}
+
+.container_fluid {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    width: 100%;
+}
+
+#profile_img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    border: 1px solid #ffffff;
+}
+
+#university_logo {
+    width: 90%;
+    height: auto;
+    border-radius: 5%;
+    padding: 1% 5%;
+}
+
+.nav_div {
+    width: 15%;
+    padding: 0;
+    background-color: #2C473E;
+    height: 100vh;
+    transition: all 0.3s ease;
+    /* position: fixed;
+    z-index: 1; */
+}
+
+.main_body {
+    width: 95%;
+}
+
+.nav_list ul {
+    padding-left: 0;
+}
+
+.nav_list ul li a {
+    display: block;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 23px;
+    margin-left: 5%;
+    padding: 5% 14%;
+    color: #FFFFFF;
+}
+
+.nav_list ul li a.active {
+    background-color: #FFFFFF;
+    opacity: 1;
+    color: black;
+    padding: 5% 15%;
+    font-weight: 400;
+    border-radius: 5px 0% 0% 5px;
+}
+
+.nav_list ul li i {
+    padding-right: 10%;
+}
+
+.nav_list ul li:hover {
+    background-color: #fff;
+    color: black;
+    border-radius: 5px 0% 0% 5px;
+    margin-left: 5%;
+}
+
+.nav_list ul li a:hover {
+    color: #444;
+    font-weight: 400;
+}
+
+.profile {
+    margin-bottom: 20%;
+    padding: 5% 12%;
+}
+
+
+/* sm_nav_bar */
+
+#sm_nav_div {
+    width: 100px;
+    background-color: royalblue;
+}
+
+
+/* after click hamberger button */
+
+.nav_div.collapse {
+    width: 5%;
+    transition: all 0.3s ease;
+}
+
+.nav_div.collapse .nav_list ul li a {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 40px;
+    padding: 5% 30%;
+}
+
+.nav_div.collapse .title {
+    display: none;
+}
+
+.nav_div.collapse .main_body {
+    width: 95%;
+    margin-left: 15%;
+}
+
+
+/* body */
+
+.main_body {
+    display: flex;
+    flex-direction: column;
+    position: none;
+    position: relative;
+}
+
+.search_bar {
+    background-color: brown;
+    padding: 0;
+    overflow: hidden;
+    margin: 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 2%;
+}
+
+.left_body {
+    width: 68%;
+    padding: 1%;
+    border-right: 1px solid black;
+}
+
+.right_body {
+    width: 28%;
+    padding: 1%;
+}
+
+.col-sm-12 {
+    overflow: hidden;
+}
+
+.search_bar .search_field {
+    width: 100%;
+    padding: 1% 2%;
+    font-size: 24px;
+}
+
+.body_content {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
