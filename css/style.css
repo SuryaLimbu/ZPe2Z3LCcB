@@ -19,22 +19,60 @@ body {
     margin: 0;
 }
 
+#nav-container {
+    background-color: red;
+    position: relative;
+    width: 100%;
+    max-width: 15%;
+    overflow: hidden;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+
+/* style for profile for aspect ratio sabin lawaju*/
+
+.profile {
+    width: 60%;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 20%;
+    border: 1px solid #ffffff;
+}
+
+
+/* Aspect ratio Sabin lawaju*/
+
+#aspect-ratio {
+    height: 0;
+    overflow: hidden;
+    padding-top: 100%;
+    position: relative;
+}
+
+
+/* style for user_img.. Sabin lawaju */
+
 .user_img {
-    width: 80%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
 
 .container_fluid {
     display: flex;
     flex-direction: row;
-    position: fixed;
     width: 100%;
 }
 
 #profile_img {
     width: 100%;
-    height: auto;
+    /*height: auto;
     border-radius: 50%;
-    border: 1px solid #ffffff;
+    border: 1px solid #ffffff;*/
 }
 
 #university_logo {
@@ -45,13 +83,18 @@ body {
 }
 
 .nav_div {
-    width: 15%;
+    position: fixed;
+    width: inherit;
+    max-width: inherit;
+    box-sizing: border-box;
     padding: 0;
     background-color: #2C473E;
     height: 100vh;
-    transition: all 0.3s ease;
-    /* position: fixed;
-    z-index: 1; */
+    /* width: 15%;
+    padding: 0;
+    background-color: #2C473E;
+    height: 100vh;
+    transition: all 0.3s ease; */
 }
 
 .main_body {
@@ -97,11 +140,6 @@ body {
     font-weight: 400;
 }
 
-.profile {
-    margin-bottom: 20%;
-    padding: 5% 12%;
-}
-
 
 /* sm_nav_bar */
 
@@ -113,10 +151,16 @@ body {
 
 /* after click hamberger button */
 
-.nav_div.collapse {
-    width: 5%;
+#nav-container.collapse {
+    max-width: 5%;
     transition: all 0.3s ease;
 }
+
+
+/* .nav_div.collapse {
+    width: 5%;
+    transition: all 0.3s ease;
+} */
 
 .nav_div.collapse .nav_list ul li a {
     font-size: 24px;
@@ -134,6 +178,11 @@ body {
     margin-left: 15%;
 }
 
+.logo_container {
+    position: absolute;
+    bottom: 0;
+}
+
 
 /* body */
 
@@ -142,6 +191,7 @@ body {
     flex-direction: column;
     position: none;
     position: relative;
+    height: auto;
 }
 
 .search_bar {
@@ -154,12 +204,17 @@ body {
 }
 
 .left_body {
+    /* display: grid;
+    grid-template-columns: 50% auto;
+    grid-template-areas: 'left right'; */
     width: 68%;
     padding: 1%;
-    border-right: 1px solid black;
+    /* border-right: 2px solid #707070; */
 }
 
 .right_body {
+    display: grid;
+    grid-template-columns: auto;
     width: 28%;
     padding: 1%;
 }
@@ -178,4 +233,54 @@ body {
     display: flex;
     flex-direction: row;
     height: 100vh;
+}
+
+.top_contents {
+    display: grid;
+    grid-template-columns: 50% auto;
+    grid-template-areas: 'left right';
+    grid-gap: 5px;
+    padding: 5% 2%;
+    background-color: #DDE8EC;
+    /* border-bottom: 2px solid #707070; */
+}
+
+.left_body .left_chart {
+    grid-area: left;
+    padding-left: 4%;
+    padding-right: 4%;
+}
+
+.left_body .right_chart {
+    grid-area: right;
+    padding-left: 4%;
+    padding-right: 2%;
+}
+
+.left_body .main_content {}
+
+.item_body {
+    margin-top: 2%;
+    padding: 1% 5%;
+    background-color: #DDE8EC;
+}
+
+.item {
+    padding: 1%;
+    background-color: #FFFFFF;
+    margin-top: 2%;
+    border-radius: 5px;
+    clear: both;
+}
+
+.right_content {
+    display: grid;
+}
+
+.right_content_analyze,
+.right_content_calender {
+    background-color: #DDE8EC;
+    padding: 5% 5%;
+    margin-bottom: 2%;
+    border-radius: 5px;
 }
