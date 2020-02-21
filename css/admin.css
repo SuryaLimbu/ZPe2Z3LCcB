@@ -1,0 +1,43 @@
+.top_add_section {
+    width: 100%;
+    padding: 1% 2%;
+    display: flex;
+    flex-direction: column;
+}
+
+.add_btn {
+    background-color: #659581;
+    color: #ffffff;
+    float: left;
+    padding: 1% 2%;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+}
+
+.add_btn:hover {
+    background-color: #ffffff;
+    color: black;
+    border: 1px solid #659581;
+}
+
+#expand_add_btn {
+    display: none;
+    margin-top: 2%;
+    background-color: #DDE8EC;
+    padding: 2%;
+}
+
+
+/* #expand_add_btn input {
+    background-color: #659581;
+    color: #ffffff;
+    float: left;
+    padding: 1% 2%;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+} */
