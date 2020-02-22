@@ -5,6 +5,14 @@
     flex-direction: column;
 }
 
+.btns{
+    display: inline-block;
+}
+
+.btns a{
+    color: inherit;
+}
+
 .add_btn {
     background-color: #659581;
     color: #ffffff;
@@ -15,6 +23,7 @@
     border-radius: 5px;
     cursor: pointer;
     outline: none;
+    margin-right: 1em;
 }
 
 .add_btn:hover {
