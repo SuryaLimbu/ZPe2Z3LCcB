@@ -50,3 +50,32 @@
     border-radius: 5px;
     cursor: pointer;
 } */
+
+#letter{
+    width: 11cm;
+    min-height: 15cm;
+    padding: 2cm;
+    margin: 1cm auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: white;
+    border: 1px solid;
+    transform: scale(0);
+}
+
+#letter.pop{
+    transform: translate(-50%) scale(1);
+}
+
+#content{
+    display: none;
+}
+
+#edit_view{
+    display:none;
+}
+
+#content.show, #edit_view.show{
+    display: block;
+}
