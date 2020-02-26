@@ -1,45 +1,35 @@
+<link rel="stylesheet" href="../css/table.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap" > 
+<link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
+
+
 <?php  
-    $pdo = new PDO('mysql:dbname=Woodlands;host=localhost', 'root', '');
+
+    $base = dirname(getcwd(), 1) ;
+
+
+    require $base.'/classes/databaseQueries.php';
+    require $base.'/classes/htmlTable.php';
+
+
+
+    $database = new Database();
 
     if(isset($_POST['upload'])){
         if($_FILES['ucas_file']['name']){
             $file = fopen($_FILES['ucas_file']['tmp_name'], 'r');
             while($row = fgetcsv($file)){
                 $value = "'".implode("','",$row)."'";
-                $stmt = $pdo->prepare("INSERT INTO UCAS(UCAS_id, first_name, sur_name, course_name, email, recent_grade, gender, date_of_birth, address, contact) VALUES(".$value.")");
-                $res=$stmt->execute();
+                $database->insert('ucas',$value);
+
             }
-            if($res){
-                echo "imported";
-            }else{
-                echo "error";
-            }
+
         }
-        $stmt=$pdo->prepare("UPDATE UCAS SET unconditional=0 WHERE recent_grade='pending'");
-        $r=$stmt->execute();
-        if($r){
-            echo "Success";
-        }else{
-            echo "Error2";
-        }
+
+        $database->update('ucas',array('unconditional'=>0),'recent_grade','pending');
+
     }
 
-    // if(isset($_GET['ucId'])){
-    //     $stmt=$pdo->prepare("UPDATE UCAS SET case_status = 1 WHERE UCAS_id = :ucId");
-    //     $stmt->execute($_GET);
-
-    //     $stmt=$pdo->prepare("INSERT INTO case_papers(UCAS_id, date_created) VALUES(:UCAS_id, :date_created)");
-    //     $criteria = [
-    //         'UCAS_id'=>$_GET['ucId'],
-    //         'date_created'=>date('Y-m-d H:m:s'),
-    //     ];
-    //     $res=$stmt->execute($criteria);
-    //     if($res){
-    //         echo "Case Created";
-    //     }else{
-    //         echo "There was an error";
-    //     }
-    // }
 ?>
 <div class="main_body">
     <div class="top_add_section">
@@ -66,44 +56,49 @@
     </div>
 </div>
 
-<table border="1">
-    <tr>
-        <th></th>
-        <th>Student firstname</th>
-        <th>Student Surname</th>
-        <th>UCASID</th>
-        <th>Course</th>
-        <th>Birth Date</th>
-        <th>Email</th>
-        <th>Recent Grade</th>
-        <th>Gender</th>
-        <th>Contact</th>
-        <th></th>
-    </tr>
 
-    <?php  
-        $stmt = $pdo->prepare("SELECT * FROM UCAS");
-        $stmt->execute();
-        foreach ($stmt as $data){?>
-            <tr>
-                <td>
-                    <?php  
-                        if($data['case_status']==1){
-                            echo '<a href="#">Case Already Created</a>';
-                        }else{?>
-                            <a href="casefile.php?ucId=<?php echo $data['UCAS_id']; ?>">Create Case</a>
-                    <?php } ?>
-                    
-                </td>
-                <td><?php echo $data['first_name']; ?></td>
-                <td><?php echo $data['sur_name']; ?></td>
-                <td><?php echo $data['UCAS_id']; ?></td>
-                <td><?php echo $data['course_name']; ?></td>
-                <td><?php echo $data['date_of_birth']; ?></td>
-                <td><?php echo $data['email']; ?></td>
-                <td><?php echo $data['recent_grade']; ?></td>
-                <td><?php echo $data['gender']; ?></td>
-                <td><?php echo $data['contact']; ?></td>
-            </tr>
-    <?php } ?>
-</table>
+
+<?php
+$table = new createTable();
+// adding a header for the table
+$table->addHeader(array(
+    'Case Creation',
+    'Student firstname',
+    'Student Surname',
+    'UCASID',
+    'Course',
+    'Birth Date',
+    'Email',
+    'Recent Grade',
+    'Gender',
+    'Contact'
+));
+
+$request = $database->findAll('ucas');
+foreach ($request as $key => $data) {
+    $caseCreation;
+    if($data['case_status']==1){
+         $caseCreation = 'Case Already Created';
+    }else{
+        $id = $data['UCAS_id'];
+        $caseCreation = "<a href='casefile.php?ucId=$id>Create Case</a>";
+    }   
+
+    // adding rows of values in table
+    $table->addRow(array(
+    $caseCreation,
+    $data['first_name'],
+    $data['sur_name'],
+    $data['UCAS_id'],
+    $data['course_name'],
+    $data['date_of_birth'],
+    $data['email'],
+    $data['recent_grade'],
+    $data['gender'],
+    $data['contact']
+    ));
+    
+}
+
+echo $table->getHTML();
+?>

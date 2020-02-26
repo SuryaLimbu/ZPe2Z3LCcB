@@ -1,3 +1,7 @@
+*{
+     font-family: 'PT Sans', sans-serif;
+}
+
 li {
     list-style: none;
 }
@@ -19,169 +23,6 @@ body {
     margin: 0;
 }
 
-#nav-container {
-    position: relative;
-    width: 100%;
-    max-width: 15%;
-    overflow: hidden;
-    box-sizing: border-box;
-    transition: all 0.3s ease;
-}
-
-
-/* style for profile for aspect ratio sabin lawaju*/
-
-.profile {
-    width: 60%;
-    border-radius: 50%;
-    overflow: hidden;
-    margin: auto;
-    margin-top: 5%;
-    margin-bottom: 20%;
-    border: 1px solid #ffffff;
-}
-
-
-/* Aspect ratio Sabin lawaju*/
-
-#aspect-ratio {
-    height: 0;
-    overflow: hidden;
-    padding-top: 100%;
-    position: relative;
-}
-
-
-/* style for user_img.. Sabin lawaju */
-
-.user_img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-}
-
-.container_fluid {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-}
-
-#profile_img {
-    width: 100%;
-    /*height: auto;
-    border-radius: 50%;
-    border: 1px solid #ffffff;*/
-}
-
-#university_logo {
-    width: 90%;
-    height: auto;
-    border-radius: 5%;
-    padding: 1% 5%;
-}
-
-.nav_div {
-    position: fixed;
-    width: inherit;
-    max-width: inherit;
-    box-sizing: border-box;
-    padding: 0;
-    background-color: #2C473E;
-    height: 100vh;
-    /* width: 15%;
-    padding: 0;
-    background-color: #2C473E;
-    height: 100vh;
-    transition: all 0.3s ease; */
-}
-
-.main_body {
-    width: 95%;
-}
-
-.nav_list ul {
-    padding-left: 0;
-}
-
-.nav_list ul li a {
-    display: block;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 23px;
-    margin-left: 5%;
-    padding: 5% 14%;
-    color: #FFFFFF;
-}
-
-.nav_list ul li a.active {
-    background-color: #FFFFFF;
-    opacity: 1;
-    color: black;
-    padding: 5% 15%;
-    font-weight: 400;
-    border-radius: 5px 0% 0% 5px;
-}
-
-.nav_list ul li i {
-    padding-right: 10%;
-}
-
-.nav_list ul li:hover {
-    background-color: #fff;
-    color: black;
-    border-radius: 5px 0% 0% 5px;
-    margin-left: 5%;
-}
-
-.nav_list ul li a:hover {
-    color: #444;
-    font-weight: 400;
-}
-
-
-/* sm_nav_bar */
-
-#sm_nav_div {
-    width: 100px;
-    background-color: royalblue;
-}
-
-
-/* after click hamberger button */
-
-#nav-container.collapse {
-    max-width: 5%;
-    transition: all 0.3s ease;
-}
-
-
-/* .nav_div.collapse {
-    width: 5%;
-    transition: all 0.3s ease;
-} */
-
-.nav_div.collapse .nav_list ul li a {
-    font-size: 24px;
-    font-weight: 600;
-    line-height: 40px;
-    padding: 5% 30%;
-}
-
-.nav_div.collapse .title {
-    display: none;
-}
-
-.nav_div.collapse .main_body {
-    width: 95%;
-    margin-left: 15%;
-}
-
-.logo_container {
-    position: absolute;
-    bottom: 0;
-}
-
 
 /* body */
 
@@ -193,37 +34,6 @@ body {
     height: auto;
 }
 
-.search_bar {
-    display: inline-flex;
-    /* flex: 1 1 300px; */
-    position: relative;
-    overflow: hidden;
-    padding: 1%;
-    overflow: hidden;
-    margin: 0;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin-bottom: 2%;
-}
-
-.search {
-    display: inline-flex;
-    width: 90%;
-}
-
-.search_bar i {
-    padding: 1% 2%;
-    font-size: 24px;
-}
-
-.search_bar .search_field {
-    width: 100%;
-    padding: 1% 0%;
-    font-size: 24px;
-    border: 0;
-    /* padding: 0.5rem 0.5rem 0.5rem 0; */
-    flex: 1;
-    outline: none;
-}
 
 .imp_icons {
     width: 10%;
@@ -231,67 +41,7 @@ body {
     padding-top: 1%;
 }
 
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 30px;
-}
 
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgb(19, 20, 20);
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 22px;
-    width: 22px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-
-input:checked+.slider {
-    background-color: #ccc;
-}
-
-input:focus+.slider {
-    box-shadow: 0 0 1px #2196F3;
-}
-
-input:checked+.slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-}
-
-
-/* Rounded sliders */
-
-.slider.round {
-    border-radius: 34px;
-}
-
-.slider.round:before {
-    border-radius: 50%;
-}
 
 .logout {
     margin-left: 7%;

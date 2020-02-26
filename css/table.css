@@ -1,0 +1,31 @@
+/* @font-face{
+    src: url('https://fonts.google.com/specimen/Roboto');
+    font-family: 'Font';
+} */
+body{
+    font-family: '';
+}
+table{
+    /* font */
+    border-collapse: collapse;
+    margin-left: 1%;
+    width: 98%;
+    overflow-x: auto;
+    background-color: #DDE8EC;
+    font-family: 'PT Sans', sans-serif;
+    border: 1px solid black;
+}
+
+table th{
+    background-color: #2C473E;
+    color: white;
+    padding: 15px;
+}
+table td{
+    padding: 15px;
+    border-right: 1px solid black;
+}
+
+table tr:hover{
+    background-color: lightgray;
+}

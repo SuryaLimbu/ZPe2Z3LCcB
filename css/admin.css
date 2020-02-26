@@ -1,12 +1,14 @@
 .top_add_section {
     width: 100%;
-    padding: 1% 2%;
+    padding: 2% 1%;
     display: flex;
     flex-direction: column;
 }
 
 .btns{
-    display: inline-block;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .btns a{
@@ -14,12 +16,11 @@
 }
 
 .add_btn {
+    border: 2px solid #659581;
     background-color: #659581;
     color: #ffffff;
     float: left;
-    padding: 1% 2%;
-    font-weight: 600;
-    border: none;
+    padding: 15px;
     border-radius: 5px;
     cursor: pointer;
     outline: none;
@@ -29,28 +30,16 @@
 .add_btn:hover {
     background-color: #ffffff;
     color: black;
-    border: 1px solid #659581;
 }
 
 #expand_add_btn {
+    width: 99%;
     display: none;
     margin-top: 2%;
     background-color: #DDE8EC;
     padding: 2%;
-}
-
-
-/* #expand_add_btn input {
-    background-color: #659581;
-    color: #ffffff;
-    float: left;
-    padding: 1% 2%;
-    font-weight: 600;
-    border: none;
     border-radius: 5px;
-    cursor: pointer;
-} */
-
+}
 #letter{
     width: 11cm;
     min-height: 15cm;

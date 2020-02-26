@@ -1,0 +1,29 @@
+.search_bar {
+    display: inline-flex;
+    position: relative;
+    overflow: hidden;
+    padding: 8px;
+    overflow: hidden;
+    margin: 0;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 5px 15px 0 rgba(0, 0, 0, 0.19);
+    /* margin-bottom: 1%; */
+}
+
+.search {
+    display: inline-flex;
+    width: 90%;
+}
+
+.search_bar i {
+    padding: 1% 2%;
+    font-size: medium;
+}
+
+.search_bar .search_field {
+    width: 100%;
+    padding: 1% 0%;
+    font-size: medium;
+    border: 0;
+    flex: 1;
+    outline: none;
+}
