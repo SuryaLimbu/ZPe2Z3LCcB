@@ -1,3 +1,10 @@
+<?php 
+include 'root.php';
+echo '<link rel="stylesheet" type="text/css" href="'.SCRIPT_ROOT.'/css/navigation.css">';
+?>
+
+<script src="https://kit.fontawesome.com/78b37ab1e1.js" crossorigin="anonymous"></script>
+
 <div id="nav-container">
             <div class="nav_div">
 
@@ -6,7 +13,7 @@
                         <div id="aspect-ratio">
                             <!-- New div for aspect-ratio -->
                             <div class="user_img">
-                                <img src="<?php echo $css_path ?>images/index.jfif" id="profile_img" alt="profile"><br>
+                                <img src="<?php echo $baseLocation ?>/images/index.jfif" id="profile_img" alt="profile"><br>
                             </div>
                         </div>
                     </div>
@@ -20,33 +27,45 @@
                                 </a>
                             </li>
                             <li class="list">
-                                <a class="nav-item" href="#">
+                                <?php echo "<a href='$baseLocation/admin/' class='nav-item'>" ?>
                                     <span class="logo"> <i class="fas fa-home"></i></span>
                                     <span class="title">Dashboard</span>
                                 </a>
                             </li>
                             <li class="list">
+                                <?php echo "<a href='$baseLocation/admin/users' class='nav-item'>" ?>
+                                    <span class="logo"><i class="far fa-user"></i></span>
+                                    <span class="title">User</span>
+                                </a>
+                            </li>
+                            <li class="list">
                                 <a class="nav-item" href="#">
-                                    <span class="logo"><i class="fas fa-upload"></i></span>
-                                    <span class="title">Upload</span>
+                                    <span class="logo"><i class="fas fa-server"></i></span>
+                                    <span class="title">Modules</span>
+                                </a>
+                            </li>
+                            <li class="list">
+                                <a class="nav-item" href="#">
+                                    <span class="logo"><i class="fas fa-book-open"></i></span>
+                                    <span class="title">Course Materials</span>
                                 </a>
                             </li>
                             <li class="list">
                                 <a class="nav-item" href="#">
                                     <span class="logo"><i class="far fa-clipboard"></i></span>
-                                    <span class="title">Assign</span>
+                                    <span class="title">Assignments</span>
                                 </a>
                             </li>
                             <li class="list">
                                 <a class="nav-item" href="#">
-                                    <span class="logo"><i class="fas fa-envelope"></i></span>
-                                    <span class="title">Message</span>
+                                    <span class="logo"><i class="fas fa-archive"></i></span>
+                                    <span class="title">Archive</span>
                                 </a>
                             </li>
                             <li class="list">
                                 <a class="nav-item" href="#">
-                                    <span class="logo"><i class="far fa-chart-bar"></i></span>
-                                    <span class="title">Anylize</span>
+                                    <span class="logo"><i class="far fa-envelope"></i></span>
+                                    <span class="title">Messages</span>
                                 </a>
                             </li>
                             <li class="list">
@@ -63,13 +82,13 @@
                             </li>
                         </ul>
                     </div>
-
-                </nav>
-                <div class="logo_container">
-                    <div class="logo">
-                        <img src="<?php echo $css_path ?>images/logo/finallogo.png" id="university_logo" alt="university logo" width="200px">
+                    <div class="logo_container">
+                        <div class="logo">
+                            <img src="<?php echo $baseLocation ?>/images/logo/finallogo.png" id="university_logo" alt="university logo" width="200px">
+                        </div>
                     </div>
-                </div>
+                </nav>
+                
             </div>
         </div>
         

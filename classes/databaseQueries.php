@@ -16,11 +16,16 @@ class Database
         return $request;
     }
 
+
+    // $table is tablename enclosed in ''
+    // record is collection of record in array
+    // use array('key'=>'value')
     function insert($table, $record)
     {
         $keys = array_keys($record);
         $keysWithComma = implode(',', $keys);
         $keysWithCommaColon = implode(', :', $keys);
+        
         echo "INSERT INTO $table($keysWithComma) VALUES(:$keysWithCommaColon)";
         $stmt = $this->pdo->prepare("INSERT INTO $table($keysWithComma) VALUES(:$keysWithCommaColon)");
         $stmt->execute($record);
