@@ -55,7 +55,7 @@ $table->addHeader(array(
         'Contact'
 ));
 // finding all data from database
-$stmt = $pdo->prepare("SELECT * FROM ucas u JOIN case_papers cp ON u.UCAS_id=cp.UCAS_id WHERE cp.status='CONDITIONAL'");
+$stmt = $pdo->prepare("SELECT * FROM ucas u JOIN case_papers cp ON u.UCAS_id=cp.UCAS_id WHERE cp.status='UNCONDITIONAL'");
         $stmt->execute();
         foreach ($stmt as $data){
             $id = $data['case_id'];
@@ -63,8 +63,8 @@ $stmt = $pdo->prepare("SELECT * FROM ucas u JOIN case_papers cp ON u.UCAS_id=cp.
     // adding rows of values in table
     $table->addRow(array(
         "<button class='add_btn'>
-            <a href='conditional.php?ucID=$id' >
-                Add to Unconditional
+            <a href='unconditional.php?ucID=$id'>
+                Add to Student
             </a>
         </button>",
         $data['case_id'],

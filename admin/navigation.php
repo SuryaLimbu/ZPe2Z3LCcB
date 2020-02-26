@@ -4,6 +4,7 @@ echo '<link rel="stylesheet" type="text/css" href="'.SCRIPT_ROOT.'/css/navigatio
 ?>
 
 <script src="https://kit.fontawesome.com/78b37ab1e1.js" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
 <div id="nav-container">
             <div class="nav_div">
@@ -14,6 +15,9 @@ echo '<link rel="stylesheet" type="text/css" href="'.SCRIPT_ROOT.'/css/navigatio
                             <!-- New div for aspect-ratio -->
                             <div class="user_img">
                                 <img src="<?php echo $baseLocation ?>/images/index.jfif" id="profile_img" alt="profile"><br>
+                            </div>
+                            <div class="user_id">
+                                <h4 style="color: #fff">username</h4>
                             </div>
                         </div>
                     </div>

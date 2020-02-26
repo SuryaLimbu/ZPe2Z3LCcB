@@ -5,6 +5,8 @@ html,
 body {
    padding: 0;
    margin: 0;
+   scrollbar-width: none;
+   overflow: hidden;
 }
 li {
     list-style: none;
@@ -26,7 +28,13 @@ a {
 }
 .nav_list{
     height: 55vh;
-    overflow-x: auto;
+   overflow: auto;
+    scrollbar-width: none;
+}
+
+::-webkit-scrollbar{
+    width: 0px;
+    background: transparent;
 }
 .logo_container{
     height: auto;
@@ -109,10 +117,14 @@ a {
 .nav_list ul {
     padding-left: 0;
 }
+.nav_list ul li{
+    margin-left: 5%;
+    font-size: 20px;
+}
 
 .nav_list ul li a {
     display: block;
-    font-size: medium;
+    
     font-weight: 400;
     line-height: 23px;
     /* margin-left: 5%; */
@@ -138,11 +150,15 @@ a {
 .nav_list ul li:hover {
     background-color: #fff;
     color: black;
+    margin-left: 5%;
+    border-radius: 10px 0% 0% 10px;
+    
 }
 
 .nav_list ul li a:hover {
     color: #444;
     font-weight: 400;
+    
 }
 
 .nav_item{
