@@ -1,5 +1,21 @@
-<?php  
-    $pdo = new PDO('mysql:dbname=Woodlands;host=localhost', 'root', '');
+<?php 
+$base = "../../" ;
+include $base."/include/footer.php";?>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+<body>
+    <div class="container_fluid">
+	<?php include $base."/admin/navigation.php"; 
+        echo '<link rel="stylesheet" type="text/css" href="'.SCRIPT_ROOT.'/css/style.css">';
+        echo '<link rel="stylesheet" type="text/css" href="'.SCRIPT_ROOT.'/css/admin.css">';
+        echo '<link rel="stylesheet" type="text/css" href="'.SCRIPT_ROOT.'/css/searchBar.css">';
+        // $base = dirname(getcwd(), 1) ;
+		// include ($base."/navigation.php");
+	?>
+	<div class="main_body">
+		<?php
+			include $base."/include/searchBar.php"; 
+    		$pdo = new PDO('mysql:dbname=woodlands;host=localhost', 'root', '');
 
     // generateLetter($name, $id, $subject, $body, $foot)
     // {
@@ -9,7 +25,7 @@
     // 	$letter .= '<p>'.$body.'</p><br><br>';
     // 	$letter .= '<p>'.$foot.'</p>';
     // }
-
+	$stdn = '';
     if(isset($_GET['ucId'])){
         $stmt=$pdo->prepare("UPDATE UCAS SET case_status = 1 WHERE UCAS_id = :ucId");
         $stmt->execute($_GET);
@@ -24,12 +40,13 @@
             echo "Case Created";
            $stmt = $pdo->prepare("SELECT * FROM ucas u JOIN case_papers c ON u.UCAS_Id = c.UCAS_Id WHERE u.UCAS_Id=:ucId");
            $stmt->execute($_GET);
-           $stdn = $stmt->fetch();
+			$stdn = $stmt->fetch();
+			// var_dump($stdn);
         }else{
             echo "There was an error";
         }
     }
-	include ("../include/header.php");
+	
 ?>
 	<div class="btns">
 		<button id="view_letter" class="add_btn">view</button><br>
@@ -40,6 +57,7 @@
     	<div id="view">
     		<button id="edit_letter" class="add_btn">edit</button><br>
     		<div id="content">
+				
     			<?php echo $stdn['first_name']; ?>
     		</div>
     		<button id="done">Done</button>
@@ -111,5 +129,5 @@
 </script>
 
 <?php  
-	include ("../include/footer.php");
+	include ($base."/include/footer.php");
 ?>

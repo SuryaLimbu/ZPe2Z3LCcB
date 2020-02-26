@@ -5,13 +5,23 @@
 		$stmt = $pdo->prepare("UPDATE case_papers SET status='UNCONDITIONAL' WHERE case_id=:ucID");
 		$stmt->execute($_GET);
 	}
+ 
+$base = "../../" ;
+include $base."/classes/htmlTable.php";
 ?>
-<?php 
-	
-	include ("../include/header.php");
-?>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
-<div class="main_body">
+<body>
+    <div class="container_fluid">
+        <?php include $base."/admin/navigation.php"; 
+        echo '<link rel="stylesheet" type="text/css" href="'.SCRIPT_ROOT.'/css/style.css">';
+        echo '<link rel="stylesheet" type="text/css" href="'.SCRIPT_ROOT.'/css/admin.css">';
+        echo '<link rel="stylesheet" type="text/css" href="'.SCRIPT_ROOT.'/css/searchBar.css">';
+        echo '<link rel="stylesheet" type="text/css" href="'.SCRIPT_ROOT.'/css/table.css">';
+
+        ?>
+        <div class="main_body">
+            <?php include $base."/include/searchBar.php";?>
     <div class="top_add_section">
         <div class="btns">
             <div class="btn">
@@ -26,38 +36,50 @@
         </div>
 </div>	
 
-<table border="1">
-    <tr>
-    	<th>Action</th>
-        <th>Student firstname</th>
-        <th>Student Surname</th>
-        <th>UCASID</th>
-        <th>Course</th>
-        <th>Birth Date</th>
-        <th>Email</th>
-        <th>GPA</th>
-        <th>Gender</th>
-        <th>Contact</th>
-    </tr>
-
-    <?php  
-        $stmt = $pdo->prepare("SELECT * FROM UCAS u JOIN case_papers cp ON u.UCAS_id=cp.UCAS_id WHERE cp.status='CONDITIONAL'");
+<?php
+// creating table
+$table = new createTable();
+// adding a header for the table
+// adding header of the table
+$table->addHeader(array(
+        'Action',
+        'Student firstname',
+        'Student Surname',
+        'UCASID',
+        'Course',
+        'Birth Date',
+        'Email',
+        'GPA',
+        'Gender',
+        'Contact'
+));
+// finding all data from database
+$stmt = $pdo->prepare("SELECT * FROM UCAS u JOIN case_papers cp ON u.UCAS_id=cp.UCAS_id WHERE cp.status='CONDITIONAL'");
         $stmt->execute();
-        foreach ($stmt as $data){?>
-            <tr>
-            	<td><button class="add_btn"><a href="conditional.php?ucID=<?php echo $data['case_id'];?>">Add to Unconditional</a></button></td>
-                <td><?php echo $data['first_name']; ?></td>
-                <td><?php echo $data['sur_name']; ?></td>
-                <td><?php echo $data['UCAS_id']; ?></td>
-                <td><?php echo $data['course_name']; ?></td>
-                <td><?php echo $data['date_of_birth']; ?></td>
-                <td><?php echo $data['email']; ?></td>
-                <td><?php echo $data['gpa']; ?></td>
-                <td><?php echo $data['gender']; ?></td>
-                <td><?php echo $data['contact']; ?></td>
-            </tr>
-    <?php } ?>
-</table>
+        foreach ($stmt as $data){
+            $id = $data['case_id'];
 
-<?php include ("../include/footer.php");
+    // adding rows of values in table
+    $table->addRow(array(
+        "<button class='add_btn'>
+            <a href='conditional.php?ucID=$id'>
+                Add to Unconditional
+            </a>
+        </button>",
+        $data['first_name'],
+        $data['sur_name'],
+        $data['UCAS_id'],
+        $data['course_name'],
+        $data['date_of_birth'],
+        $data['email'],
+        $data['recent_grade'],
+        $data['gender'],
+        $data['contact']
+    ));
+    
+}
+// generating and displaying table in HTML
+echo $table->getHTML();
+
+include ($base."/include/footer.php");
 ?>

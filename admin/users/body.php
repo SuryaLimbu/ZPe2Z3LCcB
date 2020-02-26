@@ -56,7 +56,7 @@
                 <button class="add_btn" onclick="expand()">Import form</button>
             </div>
             <div class="btn">
-                <button class="add_btn"><a href="index.php?order=conditional">Conditional Students</a></button>
+                <button class="add_btn"><a href="conditional.php">Conditional Students</a></button>
             </div>
             <div class="btn">
                 <button class="add_btn" ><a href="unconditional.php">Unconditional Students</a></button>

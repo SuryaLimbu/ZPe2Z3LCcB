@@ -10,8 +10,6 @@ include $base."/include/footer.php";?>
         echo '<link rel="stylesheet" type="text/css" href="'.SCRIPT_ROOT.'/css/admin.css">';
         echo '<link rel="stylesheet" type="text/css" href="'.SCRIPT_ROOT.'/css/searchBar.css">';
         ?>
-
-
         <div class="main_body">
             <?php include $base."/include/searchBar.php"; ?>
             <!-- </div> -->
