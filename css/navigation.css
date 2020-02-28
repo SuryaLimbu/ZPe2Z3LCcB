@@ -28,14 +28,13 @@ a {
 }
 .nav_list{
     height: 55vh;
-   overflow: auto;
-    scrollbar-width: none;
+    overflow: hidden;
+    /* scrollbar-width: none; */
+}
+.nav_list:hover{
+    overflow-y: scroll;
 }
 
-::-webkit-scrollbar{
-    width: 0px;
-    background: transparent;
-}
 .logo_container{
     height: auto;
 }
@@ -152,6 +151,7 @@ a {
     color: black;
     margin-left: 5%;
     border-radius: 10px 0% 0% 10px;
+    /* scrollbar-width: initial; */
     
 }
 
