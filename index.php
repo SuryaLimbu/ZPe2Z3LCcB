@@ -1,5 +1,5 @@
 <?php
 
-header("Location: dashboard/?page=dashboard");
+header("Location: login.php");
  
 ?>

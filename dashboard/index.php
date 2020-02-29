@@ -1,7 +1,5 @@
 <?php
-require '../include/templateLoader.php';
-require '../classes/databaseQueries.php';
-require '../classes/htmlTable.php';
+require '../include/init.php';
 
 if (isset($_GET['page'])) {
     require '../pages/'.$_GET['page'].'.php';

@@ -12,6 +12,7 @@
                         </div>
                     </div>
                 </div>
+                <span id="user-name"><i class="fas fa-user-cog"></i> <br>User Name</span>
 
                 <div class="nav_list" id="nav_list">
                     <ul>
@@ -34,7 +35,7 @@
                             </a>
                         </li>
                         <li class="list">
-                            <a class="nav-item" href="#">
+                            <a href='?page=module' <?php echo ($_GET['page'] == 'module') ? "class='nav-item active'" : "class='nav-item'"; ?>>
                                 <span class="logo"><i class="fas fa-server"></i></span>
                                 <span class="title">Modules</span>
                             </a>

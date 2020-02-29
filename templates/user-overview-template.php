@@ -1,6 +1,5 @@
 <link rel="stylesheet" href="../css/table.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
-<link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
+
 <?php
 $database = new Database();
 $baseLink = '?page=user';

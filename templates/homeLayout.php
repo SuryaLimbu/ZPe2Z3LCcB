@@ -1,6 +1,3 @@
-<?php //$title = $body = $navigation = "Hello"
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,6 +13,8 @@
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/admin.css" />
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
     <!-- pie chart js links -->
     <script src="../script/pie_chart.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -23,13 +22,13 @@
     <!-- jquery cdn link -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <title><?php echo $title ?></title>
-
+    <link rel="shortcut icon" href="../icon.png" />
 </head>
 
 <body>
     <div class="container_fluid">
 
-        <?php echo $navigation;?>
+        <?php echo $navigation; ?>
         <div class="main_body">
             <div class="search_bar">
                 <div class="search">
@@ -38,7 +37,7 @@
                 </div>
                 <div class="imp_icons">
                     <label class="logout">
-                        <a href=""><i class="fas fa-sign-out-alt"></i></a>
+                        <a href="../"><i class="fas fa-sign-out-alt"></i></a>
                     </label>
                 </div>
             </div>
