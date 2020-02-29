@@ -1,16 +1,3 @@
-
-
-
-/* a:hover {
-    text-decoration: none;
-    color: black;
-} */
-
-
-
-
-/* body */
-
 .main_body {
     display: flex;
     flex-direction: column;
@@ -19,6 +6,9 @@
     height: auto;
 }
 
+#contentBody{
+    padding: 10px;
+}
 
 .imp_icons {
     width: 10%;

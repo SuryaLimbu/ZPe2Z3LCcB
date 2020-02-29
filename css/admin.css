@@ -11,17 +11,21 @@
     flex-wrap: wrap;
 }
 
-.btns a{
+/* .btns a{
     color: inherit;
+} */
+a{
+    color: white;
 }
 
 .add_btn {
     border: 2px solid #659581;
     background-color: #659581;
+    font-size: small;
     color: #ffffff;
     float: left;
-    padding: 15px;
-    border-radius: 5px;
+    padding: 13px;
+    border-radius: 3px;
     cursor: pointer;
     outline: none;
     margin-right: 1em;

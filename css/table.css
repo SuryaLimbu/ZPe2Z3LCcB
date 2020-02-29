@@ -8,8 +8,8 @@ body{
 table{
     /* font */
     border-collapse: collapse;
-    margin-left: 1%;
-    width: 98%;
+    /* margin-left: 1%; */
+    width: auto;
     overflow-x: auto;
     background-color: #DDE8EC;
     font-family: 'PT Sans', sans-serif;

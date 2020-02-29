@@ -20,13 +20,16 @@ class Database
     // $table is tablename enclosed in ''
     // record is collection of record in array
     // use array('key'=>'value')
+    function joinTables(){
+        $stmt = $this->pdo->prepare("SELECT * FROM UCAS u JOIN case_papers cp ON u.UCAS_id=cp.UCAS_id WHERE cp.status='CONDITIONAL'");
+    }
     function insert($table, $record)
     {
         $keys = array_keys($record);
         $keysWithComma = implode(',', $keys);
         $keysWithCommaColon = implode(', :', $keys);
         
-        echo "INSERT INTO $table($keysWithComma) VALUES(:$keysWithCommaColon)";
+        // echo "INSERT INTO $table($keysWithComma) VALUES(:$keysWithCommaColon)";
         $stmt = $this->pdo->prepare("INSERT INTO $table($keysWithComma) VALUES(:$keysWithCommaColon)");
         $stmt->execute($record);
         $stmt->errorInfo();
@@ -56,12 +59,12 @@ class Database
     }
     function update($table,$record, $pkField, $pkValue)
     {
-        echo $pkField;
+        $pkField;
         $valuesSet = "";
         foreach ($record as $key => $value) {
             $valuesSet .= "$key = '$value',";
         }
-        echo "<br>" . $valuesSet =  rtrim($valuesSet, ',');
+        "<br>" . $valuesSet =  rtrim($valuesSet, ',');
         $stmt = $this->pdo->prepare("UPDATE $table SET $valuesSet WHERE $pkField = $pkValue");
         $stmt->execute($record);
         $stmt->errorInfo();
@@ -76,5 +79,10 @@ class Database
     function setHeader($pageName)
     {
         header("Location: $pageName");
+    }
+    function executeQuery($query){
+        $request = $this->pdo->prepare($query);
+        $request->execute();
+        return $request;
     }
 }
