@@ -6,3 +6,7 @@ function expand() {
         id.style.display = "none";
     }
 }
+function alert()
+{
+    confirm("Are you sure!");
+}
