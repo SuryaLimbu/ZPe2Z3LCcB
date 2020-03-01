@@ -6,7 +6,6 @@ body {
    padding: 0;
    margin: 0;
    scrollbar-width: none;
-   overflow: hidden;
 }
 li {
     list-style: none;

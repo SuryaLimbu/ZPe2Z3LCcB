@@ -41,10 +41,6 @@
             </div>
             <div id="contentBody">
                 <?php echo $body; ?>
-                <!-- </div> -->
-                <!-- </div> -->
-                <?php //include $base . "/include/footer.php"; 
-                ?>
             </div>
             <script src='../script/JQuery.js'></script>
             <script src='../script/javascript.js'></script>

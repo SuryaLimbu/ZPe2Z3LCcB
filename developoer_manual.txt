@@ -1,0 +1,50 @@
+*****************************************
+//Everything about containers
+//
+//Contents available about:
+//
+//Here,Indentation is used according to the superiority
+//
+//Classes are : 
+//        container
+//              header-container
+//                      container-header
+//                      container-link
+//              description
+//                      description-header
+//                      details
+//              action-container
+//                      action
+//                      edit
+//                      delete
+//
+******************************************
+
+Any container that groups a collection of html attributes are called containers
+Class Name: "container"
+
+
+Collection of header of container
+Class Name: "header-container"
+
+Any header that are contained by the container are called container-header
+Class Name: "container-header"
+
+Any links that are contained by the container are called container-link
+Class Name: "container-link"
+
+Any collection contained by a container are called deacription
+Class Name: "description"
+        Contains
+        classes:
+                description-header
+                details
+
+
+Any collection that has only buttons are called action-container
+Class Name: "action-container"
+*****Links contained by action-container are called action
+        Class Name: "action"
+        Action types
+        Class Name: "edit" & "delete"
+
