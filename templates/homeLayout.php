@@ -36,9 +36,7 @@
                     <input type="text" class="search_field" name="search_bar" placeholder="Search">
                 </div>
                 <div class="imp_icons">
-                    <label class="logout">
                         <a href="../"><i class="fas fa-sign-out-alt"></i></a>
-                    </label>
                 </div>
             </div>
             <div id="contentBody">

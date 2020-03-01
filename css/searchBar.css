@@ -18,6 +18,22 @@
     padding: 1% 2%;
     font-size: medium;
 }
+.imp_icons {
+    width: 10%;
+    display: flex;
+    padding-top: 0.8%;
+}
+.imp_icons a{
+    margin:  0px auto;
+}
+.imp_icons a i {
+    font-size: larger;
+    padding: 1% 2%;
+}
+
+.imp_icons a:hover {
+    color: red;
+}
 
 .search_bar .search_field {
     width: 100%;

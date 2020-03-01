@@ -10,26 +10,10 @@
     padding: 10px;
 }
 
-.imp_icons {
-    width: 10%;
-    display: inline-flex;
-    padding-top: 1%;
-}
 
 
 
-.logout {
-    margin-left: 7%;
-    position: absolute;
-}
 
-.logout i {
-    font-size: 24px;
-}
-
-.logout a:hover {
-    color: red;
-}
 
 .left_body {
     /* display: grid;
